@@ -30,8 +30,8 @@ function App() {
             <Route path="sendpasswordresetemail" element={<SendPasswordResetEmail />} />
             <Route path="api/user/reset/:id/:token" element={<ResetPassword />} />
             <Route path="table" element={<Tables />}  />
-            <Route path="add-pitch" element={<AddPitch />}  />
-            <Route path="request-pitch" element={<RequestPitch />}  />
+            <Route path="add-pitch" element={access_token ? <AddPitch /> : <Navigate to="/login" />} />  />
+            <Route path="request-pitch" element={access_token ? <RequestPitch /> : <Navigate to="/login" />} />
             <Route path="cards" element={<Cards />}  />
             <Route path="sharks" element={<Sharks />}  />
             <Route path="shark/:id" element={<SharkDetail/>} />
@@ -39,7 +39,7 @@ function App() {
             <Route path="pitches/:id" element={<PitchDetail/>} />
             <Route path="dashboard" element={access_token ? <Dashboard /> : <Navigate to="/login" />} />
           </Route>
-          <Route path="*" element={<h1>Error 404 Page not found !!</h1>} />
+          <Route path="*" element={<h1 className='text-center'>Error 404 Page not found !!</h1>} />
         </Routes>
       </BrowserRouter>
     </>

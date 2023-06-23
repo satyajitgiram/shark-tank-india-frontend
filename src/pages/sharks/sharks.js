@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './sharks.css'
 import aman from '../../images/sharks/aman.jpeg'
 import anupam from '../../images/sharks/anupam.jpeg'
@@ -8,6 +8,9 @@ import ghazal from '../../images/sharks/ghazal.jpeg'
 import namita from '../../images/sharks/namita.jpeg'
 import peyush from '../../images/sharks/peyush.jpeg'
 import vineeta from '../../images/sharks/vineeta.jpeg'
+
+
+const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
 
 const TeamMember = ({ id, profile_picture, name, profession }) => {
 
@@ -62,7 +65,7 @@ const Team = () => {
   const [teamData, setTeamData] = useState([]);
 
   useEffect(() => {
-    fetch('/sharks/')
+    fetch(`${BASE_URL}/sharks/`)
       .then(response => response.json())
       .then(data => setTeamData(data));
   }, []);

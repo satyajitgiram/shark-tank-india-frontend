@@ -12,7 +12,7 @@ import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
-
+const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -142,7 +142,7 @@ const FormComponent = () => {
 
     // Perform API call here to send form data
     // Replace 'API_ENDPOINT' with your actual API endpoint
-    fetch('/pitches/', {
+    fetch(`${BASE_URL}/pitches/`, {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {

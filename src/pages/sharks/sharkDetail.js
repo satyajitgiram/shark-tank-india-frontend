@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import './sharkDetail.scss'
 import { Grid } from '@mui/material';
 
+const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
 
 const SharkDetail = () => {
   const { id } = useParams();
@@ -10,7 +11,7 @@ const SharkDetail = () => {
   const [member, setMember] = useState(null);
 
   useEffect(() => {
-    fetch(`/sharks/${id}`)
+    fetch(`${BASE_URL}/sharks/${id}`)
       .then(response => response.json())
       .then(data => {
         setMember(data);
@@ -27,10 +28,7 @@ const SharkDetail = () => {
     <div className="info">
     <h1>{member.name}</h1>
     <h4><a href="#category">{member.profession}</a></h4>
-    <div className="meta">
-        <a  href="https://twitter.com/nodws" target="_b" className="author"></a><br/>
-
-    </div>
+    <div className="meta"><br/></div>
     </div>
     </div>
 

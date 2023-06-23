@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
-
+const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
 const RequestPitch = () => {
     const [title, setTitle] = useState('')
     const [industry, setIndustry] = useState('')
@@ -49,7 +49,7 @@ const RequestPitch = () => {
           entrepreneur: 1
         };
       
-        fetch('/pitch-request/', {
+        fetch( `${BASE_URL}/pitch-request/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

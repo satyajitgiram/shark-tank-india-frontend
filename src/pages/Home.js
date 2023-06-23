@@ -1,4 +1,3 @@
-import { Grid } from "@mui/material";
 import './Home.scss'
 import logoImg from '../images/shark-tank-india-logo.png'
 import Sharks from "./sharks/sharks";
@@ -20,6 +19,7 @@ const Home = () => {
     </header>
     </div>
     <div className="shark-team">
+      <br/>
     <h1 class="text-center text-black">Meet Our Shark Team</h1>
     <Sharks/>
     <PitchTable/>

@@ -1,5 +1,6 @@
 import './contact.scss';
 import React, { useState } from 'react';
+const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +21,7 @@ const Contact = () => {
 
     // Perform API call here to send form data
     // Replace 'API_ENDPOINT' with your actual API endpoint
-    fetch('/contact-us/', {
+    fetch(`${BASE_URL}/contact-us/`, {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {

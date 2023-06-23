@@ -2,14 +2,15 @@ import { Grid } from "@mui/material";
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
+const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
 
 const PitchDetail = () =>{
     const { id } = useParams();
-    const [jsonData, setJsonData] = useState();
+    const [jsonData, setJsonData] = useState([]);
 
 
     useEffect(() => {
-        axios.get(`/pitches/${id}`)
+        axios.get(`${BASE_URL}/pitches/${id}/`)
           .then(response => {
             setJsonData(response.data);
             console.log(response.data)
@@ -25,9 +26,15 @@ const PitchDetail = () =>{
     }
     return (
     <>
+    <Grid container justifyContent='center'>
+      <Grid item sm={10}>
+        <br/>
+        <h1 className="text-center">{jsonData.brand_name}</h1>
+      </Grid>
+    </Grid>
     <div className="bs-example container" data-example-id="striped-table">
+        
         <table className="table table-striped table-bordered table-hover">
-          <caption>Bootstrap Table CSS Demo</caption>
           <thead>
             <tr>
               <th>#</th>
@@ -36,25 +43,29 @@ const PitchDetail = () =>{
             </tr>
           </thead>
           <tbody>
-            {jsonData.map((item, index) => (
-              <tr key={item.id}>
-                <th scope="row">{item.id}</th>
-                <td>{item.brand_name}</td>
-                {/* Add more table cells as per your data */}
-              </tr>
+          {Object.entries(jsonData).map(([key, value]) => (
+            <tr key={key}>
+                <th scope="row">{key}</th>
+                <td>
+                {typeof value === "object" ? (
+                    <ul>
+                    {Object.entries(value).map(([nestedKey, nestedValue]) => (
+                        <li key={nestedKey}>
+                        <strong>{nestedKey}: </strong>
+                        {nestedValue}
+                        </li>
+                    ))}
+                    </ul>
+                ) : (
+                    value
+                )}
+                </td>
+            </tr>
             ))}
           </tbody>
         </table>
       
     </div>
-
-    <Grid container justifyContent='center'>
-      <Grid item sm={10}>
-        <h1>Pitch Detail Page</h1>
-        <hr />
-        <p> cumque, laboriosam architecto illo! Aliquid, fuga quis.</p>
-      </Grid>
-    </Grid>
     </>
     )
 }

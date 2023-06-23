@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from './DataTable';
+const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
 
 
 
@@ -12,7 +13,7 @@ const PitchTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/pitches/');
+        const response = await axios.get(`${BASE_URL}/pitches/`);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
