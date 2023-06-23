@@ -1,71 +1,107 @@
-# Getting Started with Create React App
+# Shark Tank India React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based web application for showcasing information about the Shark Tank India TV show. It provides details about the pitches, sharks, and deals made during the show.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Display a list of pitches with their details.
+- Show information about the sharks and their investments.
+- View the deals made during the show.
+- Navigate to individual pitch pages for more information.
+- Connect with the entrepreneurs and find their social media links.
+- Add pitch.
+- Request for pitch .
+- Login, registration, reset password & logout functionality.
+## Technologies Used
 
-### `npm start`
+- React JavaScript library
+- HTML and CSS for frontend markup and styling
+- Material UI for simple Components
+- Bootstrap for responsive and styled components
+- Axios for making API requests
+- React Router for client-side routing
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js installed on your machine
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/satyajitgiram/shark-tank-india-frontend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Navigate to the project directory: 
+    ```bash
+    cd shark-tank-india-frontend
 
-### `npm run eject`
+3. Install the dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- First try:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ```
+  npm install 
+  ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- If everything will not install properly, then run the following command 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  ```
+  npm install -f
+  ```
 
-## Learn More
+## Running the Application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Start the development server: 
+ ```
+  npm start
+  ```
+The application will be running at `http://localhost:3000`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Build the application for production: 
+ ```
+  npm run build
+  ```
 
-### Code Splitting
+The optimized build will be generated in the `build` directory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To deploy the application, follow the deployment instructions specific to your hosting platform.
 
-### Making a Progressive Web App
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. The homepage displays a list of pitches & Sharks. Click on a pitch to view more details.
 
-### Advanced Configuration
+2. On the pitch details page, you can see information about the pitch, including the sharks involved and the deal made.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Use the navigation links to explore different sections of the application, such as sharks, deals, and entrepreneurs.
 
-### Deployment
+4. On the entrepreneur's page, you can find their social media links and connect with them.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+5. You have the login, registration, reset password & logout functionality is also available in the app 
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# shark-tank-india-frontend
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+
+2. Create a new branch:
+
+3. Make your changes and commit them:
+
+4. Push the changes to your forked repository:
+
+5. Create a pull request on the main repository.
+
+
+## Contact
+
+For any inquiries or suggestions, please feel free to contact : [Satyajit Giram](mailto:satyajigiram.dev@gmail.com).
