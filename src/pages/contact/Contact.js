@@ -1,5 +1,6 @@
+import  { useState } from 'react';
 import './contact.scss';
-import React, { useState } from 'react';
+
 const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
 
 const Contact = () => {
@@ -19,8 +20,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Perform API call here to send form data
-    // Replace 'API_ENDPOINT' with your actual API endpoint
     fetch(`${BASE_URL}/contact-us/`, {
       method: 'POST',
       body: JSON.stringify(formData),
@@ -30,12 +29,10 @@ const Contact = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle the API response as needed
         console.log(data);
         alert("Messege sent succefully, we will reach you soon")
       })
       .catch((error) => {
-        // Handle any errors that occurred during the API call
         console.error(error);
         alert("We could not sent message right now, Try again after sometime")
       });
@@ -63,7 +60,7 @@ const Contact = () => {
                             type="text"
                             name="name"
                             className="form-control"
-                            placeholder="Please enter your firstname *"
+                            placeholder="Please enter your firstname "
                             required
                             value={formData.name}
                             onChange={handleChange}
@@ -78,7 +75,7 @@ const Contact = () => {
                             type="text"
                             name="surname"
                             className="form-control"
-                            placeholder="Please enter your lastname *"
+                            placeholder="Please enter your lastname"
                             required
                             value={formData.surname}
                             onChange={handleChange}
@@ -95,7 +92,7 @@ const Contact = () => {
                             type="email"
                             name="email"
                             className="form-control"
-                            placeholder="Please enter your email *"
+                            placeholder="Please enter your email"
                             required
                             value={formData.email}
                             onChange={handleChange}
@@ -110,7 +107,7 @@ const Contact = () => {
                             type="text"
                             name="company_name"
                             className="form-control"
-                            placeholder="your Company Name *"
+                            placeholder="your Company Name "
                             required
                             value={formData.company_name}
                             onChange={handleChange}

@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
 html,body{
   margin:0;
-  height:120%;
-  font-family: 'Josefin Sans', sans-serif;
-
+  height:100%;
+  font-family: '', sans-serif;
 }
 a{
   text-decoration:none
@@ -20,6 +18,7 @@ a{
   min-height:400px;
   max-height:550px;
   min-width:300px;
+  background: #c5cbdd url(https://origin-staticv2.sonyliv.com/videoasset_images/sti_s2_set6_5may_landscape_thumb.jpg) 61% 0 no-repeat !important;
   color:#eee;
 }
 .header:after{
@@ -41,8 +40,9 @@ a{
   left:0;
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0); backface-visibility: hidden;
+//   scale(1.0, 1.0);
     transform: translateZ(0);
-  background:#1B2030 url(https://images.unsplash.com/photo-1571993142257-eae0b44cf0f1?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ) 50% 0 no-repeat;
+  background:#1B2030 url(https://images.unsplash.com/photo-1571993142257-eae0b44cf0f1?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ) 50% 0 no-repeat !important;
   background-size:100%;
   background-attachment:fixed;
   animation: grow 360s  linear 10ms infinite;
@@ -101,6 +101,17 @@ a{
   text-align:center;
   text-shadow:0 2px 3px rgba(0,0,0,0.2)
 }
+
+.info h4{
+  font-size:1.3em !important;
+}
+
+.info h1{
+font-size: 2.5rem;
+font-weight: 600;
+}
+
+
 .author{
   display:inline-block;
   width:50px;
@@ -112,14 +123,8 @@ a{
   margin-bottom:3px
 }
 .info h4, .meta{
-  font-size:1.3em;
+  font-size:0.7em
 }
-
-.info h1{
-font-size: 2.5rem;
-font-weight: 600;
-}
-
 .meta{
   font-style:italic;
 }

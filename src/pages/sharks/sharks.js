@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './sharks.css'
+import './sharks.scss'
 import aman from '../../images/sharks/aman.jpeg'
 import anupam from '../../images/sharks/anupam.jpeg'
 import ashneer from '../../images/sharks/ashneer.jpeg'

@@ -1,7 +1,7 @@
 import './Home.scss'
-import logoImg from '../images/shark-tank-india-logo.png'
-import Sharks from "./sharks/sharks";
-import PitchTable from "./piches/PitchTable";
+import logoImg from '../../images/shark-tank-india-logo.png'
+import Sharks from "../sharks/sharks";
+import PitchTable from "../piches/PitchTable";
 
 const Home = () => {
   return <>
@@ -14,7 +14,7 @@ const Home = () => {
       <div className="showcase-content">
         <h1>See what's next</h1>
         <p>Watch anywhere. Anytime On SONY LIV</p>
-        <a href="https://www.sonyliv.com/shows/shark-tank-india-1700000741" target="_blank" className="btn btn-xl">Watch Now on SONY LIV</a>
+        <a href="https://www.sonyliv.com/shows/shark-tank-india-1700000741" target="_blank" rel="noreferrer" className="btn btn-xl">Watch Now on SONY LIV</a>
       </div>
     </header>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import DataTable from './DataTable';
+import DataTable from '../../components/DataTable';
 const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
 
 
@@ -30,7 +30,7 @@ const PitchTable = () => {
     Header: 'Brand',
     accessor: 'brand_name',
     Cell: ({ value, row }) => (
-      <a href={`/pitches/${encodeURIComponent(row.original.id)}`}>
+      <a href={`/pitch/${encodeURIComponent(row.original.id)}`}>
         {value}
       </a>
     ),

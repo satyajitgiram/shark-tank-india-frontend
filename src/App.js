@@ -1,18 +1,16 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
 import LoginReg from "./pages/auth/LoginReg";
 import ResetPassword from "./pages/auth/ResetPassword";
 import SendPasswordResetEmail from "./pages/auth/SendPasswordResetEmail";
-import Contact from "./pages/Contact";
-import Dashboard from "./pages/Dashboard";
-import Home from "./pages/Home";
+import Contact from "./pages/contact/Contact";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Home from "./pages/home/Home";
 import Layout from "./pages/Layout";
-import Tables from "./pages/tables/Tables";
-import { useSelector } from "react-redux";
 import AddPitch from "./pages/add-pitch/AddPitch";
 import RequestPitch from "./pages/request-pitch/RequestPitch";
-import Cards from './pages/cards/cards'
 import Sharks from './pages/sharks/sharks'
-import SharkDetail from "./pages/sharks/sharkDetail";
+import SharkDetail from "./pages/sharks-detail/shark-detail";
 import PitchTable from "./pages/piches/PitchTable";
 import PitchDetail from "./pages/piches/PitchDetail";
 
@@ -29,14 +27,12 @@ function App() {
             <Route path="login" element={!access_token ? <LoginReg /> : <Navigate to="/dashboard" />} />
             <Route path="sendpasswordresetemail" element={<SendPasswordResetEmail />} />
             <Route path="api/user/reset/:id/:token" element={<ResetPassword />} />
-            <Route path="table" element={<Tables />}  />
             <Route path="add-pitch" element={access_token ? <AddPitch /> : <Navigate to="/login" />} />  />
             <Route path="request-pitch" element={access_token ? <RequestPitch /> : <Navigate to="/login" />} />
-            <Route path="cards" element={<Cards />}  />
             <Route path="sharks" element={<Sharks />}  />
             <Route path="shark/:id" element={<SharkDetail/>} />
             <Route path="pitches" element={<PitchTable/>} />
-            <Route path="pitches/:id" element={<PitchDetail/>} />
+            <Route path="pitch/:id" element={<PitchDetail/>} />
             <Route path="dashboard" element={access_token ? <Dashboard /> : <Navigate to="/login" />} />
           </Route>
           <Route path="*" element={<h1 className='text-center'>Error 404 Page not found !!</h1>} />

@@ -140,8 +140,7 @@ const FormComponent = () => {
     formData.deal = dealOrNot
     console.log(formData)
 
-    // Perform API call here to send form data
-    // Replace 'API_ENDPOINT' with your actual API endpoint
+
     fetch(`${BASE_URL}/pitches/`, {
       method: 'POST',
       body: JSON.stringify(formData),
@@ -151,12 +150,10 @@ const FormComponent = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle the API response as needed
         console.log(data);
         alert("Pitch Saved succefully !")
       })
       .catch((error) => {
-        // Handle any errors that occurred during the API call
         console.error(error);
         alert("Pitch submission failed!, Try again after sometime")
       });
@@ -166,6 +163,9 @@ const FormComponent = () => {
 
   return (
     <React.Fragment>
+      <div className="text-center mt-3 mb-3">
+        <h2>Add Shark Tank Pitch </h2>
+      </div>
       <div style={{ margin: "20px", paddingBottom: "30px" }}>
         <form onSubmit={handleSubmit} className="form">
           <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
@@ -227,15 +227,26 @@ const FormComponent = () => {
               value={formData.product}
               onChange={handleInputChange}
             />
+            <TextField
+              id="sector"
+              name="sector"
+              label="Sector"
+              variant="outlined"
+              placeholder="Sector"
+              fullWidth
+              required
+              value={formData.sector}
+              onChange={handleInputChange}
+            />
             
           </Stack>
           <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
             <TextField
               id="pitcher_ask_amount"
               name="pitcher_ask_amount"
-              label="Pitcher Ask Amount"
+              label="Pitcher Ask Amount (Lakhs)"
               variant="outlined"
-              placeholder=""
+              placeholder="Pitcher Ask Amount (Lakhs)"
               fullWidth
               required
               value={formData.pitcher_ask_amount}
@@ -244,9 +255,9 @@ const FormComponent = () => {
             <TextField
               id="pitcher_ask_equity"
               name="pitcher_ask_equity"
-              label="Pitcher Ask Equity"
+              label="Pitcher Ask Equity (%)"
               variant="outlined"
-              placeholder=""
+              placeholder="Pitcher Ask Equity (%)"
               fullWidth
               required
               value={formData.pitcher_ask_equity}
@@ -262,40 +273,13 @@ const FormComponent = () => {
               required
               value={formData.pitcher_ask_valuation}
               onChange={handleInputChange}
-            />
-          </Stack>
-          <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
-            <TextField
-              id="sector"
-              name="sector"
-              label="Sector"
-              variant="outlined"
-              placeholder="Sector"
-              fullWidth
-              required
-              value={formData.sector}
-              onChange={handleInputChange}
-            />
-            <div style={{ width: '-webkit-fill-available' }}> 
-            <FormControlLabel
-              control={
-                <Checkbox
-                  id="deal_or_not"
-                  name="deal_or_not"
-                  checked={dealOrNot}
-                  onChange={handleDealChange}
-                  inputProps={{ 'aria-label': 'Deal or Not' }}
-                />
-              }
-              label="Deal or Not"
-            />
-            </div>
+            />        
             <TextField
               id="deal_valuation"
               name="deal_valuation"
-              label="Deal Valuation"
+              label="Deal Valuation (Lakhs)"
               variant="outlined"
-              placeholder="Deal Valuation"
+              placeholder="Deal Valuation (Lakhs)"
               fullWidth
               required
               value={formData.deal_valuation}
@@ -308,7 +292,7 @@ const FormComponent = () => {
               name="entrepreneurs_founders"
               label="Entrepreneurs/Founders"
               variant="outlined"
-              placeholder=""
+              placeholder="Entrepreneurs/Founders"
               fullWidth
               required
               value={formData.entrepreneurs_founders}
@@ -318,9 +302,9 @@ const FormComponent = () => {
             <TextField
               id="deal_amount"
               name="deal_amount"
-              label="Deal Amount"
+              label="Deal Amount (Lakhs)"
               variant="outlined"
-              placeholder="Deal Amount"
+              placeholder="Deal Amount (Lakhs)"
               fullWidth
               required
               value={formData.deal_amount}
@@ -350,53 +334,6 @@ const FormComponent = () => {
               value={formData.equity_per_shark}
               onChange={handleInputChange}
             />
-          </Stack>
-          <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
-          <FormControl sx={{ m: 1, width: 300 }}>
-              <InputLabel id="demo-multiple-checkbox-label">Invested Sharks</InputLabel>
-              <Select
-                labelId="demo-multiple-checkbox-label"
-                id="demo-multiple-checkbox"
-                multiple
-                value={investedsharks}
-                onChange={handleChangeInvestedShark}
-                input={<OutlinedInput label="Invested Sharks" />}
-                renderValue={renderValue}
-                MenuProps={MenuProps}
-              >
-                {sharkNames.map((name) => (
-                  <MenuItem key={name} value={name}>
-                    <Checkbox checked={investedsharks.indexOf(name) > -1} />
-                    <ListItemText primary={name} />
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-
-
-            <FormControl sx={{ m: 1, width: 300 }}>
-              <InputLabel id="demo-multiple-checkbox-label">Present Sharks</InputLabel>
-              <Select
-                labelId="demo-multiple-checkbox-label"
-                id="demo-multiple-checkbox"
-                multiple
-                value={presentsharks}
-                onChange={handleChangeShark}
-                input={<OutlinedInput label="Present Sharks" />}
-                renderValue={renderValue}
-                MenuProps={MenuProps}
-              >
-                {sharkNames.map((name) => (
-                  <MenuItem key={name} value={name}>
-                    <Checkbox checked={presentsharks.indexOf(name) > -1} />
-                    <ListItemText primary={name} />
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-        </Stack>
-        
-          <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
             <TextField
               id="final_deal_debt"
               name="final_deal_debt"
@@ -420,6 +357,64 @@ const FormComponent = () => {
               onChange={handleInputChange}
             />
           </Stack>
+          <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
+            <FormControl sx={{ m: 1, width: 600  }} style={{margin:'0px'}}>
+              <InputLabel id="demo-multiple-checkbox-label">Sharks Invested</InputLabel>
+              <Select
+                labelId="demo-multiple-checkbox-label"
+                id="demo-multiple-checkbox"
+                multiple
+                value={investedsharks}
+                onChange={handleChangeInvestedShark}
+                input={<OutlinedInput label="Sharks Invested" />}
+                renderValue={renderValue}
+                MenuProps={MenuProps}
+              >
+                {sharkNames.map((name) => (
+                  <MenuItem key={name} value={name}>
+                    <Checkbox checked={investedsharks.indexOf(name) > -1} />
+                    <ListItemText primary={name} />
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+
+            <FormControl sx={{ m: 1, width: 600 }}>
+              <InputLabel id="demo-multiple-checkbox-label">Present Sharks</InputLabel>
+              <Select
+                labelId="demo-multiple-checkbox-label"
+                id="demo-multiple-checkbox"
+                multiple
+                value={presentsharks}
+                onChange={handleChangeShark}
+                input={<OutlinedInput label="Present Sharks" />}
+                renderValue={renderValue}
+                MenuProps={MenuProps}
+              >
+                {sharkNames.map((name) => (
+                  <MenuItem key={name} value={name}>
+                    <Checkbox checked={presentsharks.indexOf(name) > -1} />
+                    <ListItemText primary={name} />
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            <div style={{ width: '-webkit-fill-available', marginTop:'7px' }}> 
+            <FormControlLabel
+              control={
+                <Checkbox
+                  id="deal_or_not"
+                  name="deal_or_not"
+                  checked={dealOrNot}
+                  onChange={handleDealChange}
+                  inputProps={{ 'aria-label': 'Deal or Not' }}
+                />
+              }
+              label="Deal or Not"
+            />
+            </div>
+        </Stack>
+        
           <div className="form-group">
             <Button type="submit" variant="contained" color="primary">
               Submit

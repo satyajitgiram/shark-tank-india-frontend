@@ -20,7 +20,7 @@
     width: 100%;
     height: 93vh;
     position: relative;
-    background: url('../images/shark-tank-india-background.webp') no-repeat center center/cover;
+    background: url('../../images/shark-tank-india-background.webp') no-repeat center center/cover;
 }
 
 .showcase::after {
@@ -109,7 +109,7 @@
 
 
 .btn-xl {
-    font-size: 2rem;
+    font-size: 1.6rem;
     padding: 1.5rem 2.1rem;
     text-transform: uppercase;
     color:white !important;

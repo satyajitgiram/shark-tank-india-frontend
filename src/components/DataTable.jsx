@@ -1,5 +1,5 @@
 import { useTable, useSortBy, useFilters, useGlobalFilter, usePagination } from 'react-table';
-import GlobalFilter from '../../components/GlobalFilter';
+import GlobalFilter from './GlobalFilter';
 
 const DataTable = ({ columns, data }) => {
   const {
