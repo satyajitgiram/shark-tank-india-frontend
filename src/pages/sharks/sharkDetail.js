@@ -10,7 +10,7 @@ const SharkDetail = () => {
   const [member, setMember] = useState(null);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8010/sharks/${id}`)
+    fetch(`/sharks/${id}`)
       .then(response => response.json())
       .then(data => {
         setMember(data);

@@ -36,7 +36,7 @@ function App() {
             <Route path="sharks" element={<Sharks />}  />
             <Route path="shark/:id" element={<SharkDetail/>} />
             <Route path="pitches" element={<PitchTable/>} />
-            <Route path="pitches/:name" element={<PitchDetail/>} />
+            <Route path="pitches/:id" element={<PitchDetail/>} />
             <Route path="dashboard" element={access_token ? <Dashboard /> : <Navigate to="/login" />} />
           </Route>
           <Route path="*" element={<h1>Error 404 Page not found !!</h1>} />

@@ -49,7 +49,7 @@ const RequestPitch = () => {
           entrepreneur: 1
         };
       
-        fetch('http://127.0.0.1:8010/pitches/', {
+        fetch('/pitch-request/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -59,11 +59,14 @@ const RequestPitch = () => {
           .then(response => response.json())
           .then(result => {
             // Handle the response from the API
+            alert("Pitch Requested succefully!, we will give you update on your mail")
             console.log(result);
           })
           .catch(error => {
             // Handle any errors
             console.error('Error:', error);
+            alert("Pitch submission failed!, Try again after sometime")
+
           });
       }
  

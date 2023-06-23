@@ -1,8 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Route } from 'react-router-dom';
 import './sharks.css'
+import aman from '../../images/sharks/aman.jpeg'
+import anupam from '../../images/sharks/anupam.jpeg'
+import ashneer from '../../images/sharks/ashneer.jpeg'
+import ghazal from '../../images/sharks/ghazal.jpeg'
+import namita from '../../images/sharks/namita.jpeg'
+import peyush from '../../images/sharks/peyush.jpeg'
+import vineeta from '../../images/sharks/vineeta.jpeg'
 
 const TeamMember = ({ id, profile_picture, name, profession }) => {
+
+  const getImageUrl = (name) => {
+    const newname = name.split(" ")[0].toLowerCase(); 
+    console.log(newname)
+    switch (newname) {
+      case 'aman':
+        return aman;
+      case 'anupam':
+        return anupam;
+      case 'ashneer':
+        return ashneer;
+      case 'ghazal':
+        return ghazal;
+      case 'namita':
+        return namita;
+      case 'peyush':
+        return peyush;
+      case 'vineeta':
+        return vineeta;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="single_advisor_profile wow fadeInUp">
       {/* <h5>{profile_picture}</h5> */}
@@ -12,7 +43,7 @@ const TeamMember = ({ id, profile_picture, name, profession }) => {
               state: { profession }
             }}
           >
-        <img src={profile_picture} alt=""  style={{width:'100%'}}/>
+        <img src={ getImageUrl(name)} alt={name}  style={{width:'100%'}}/>
       </Link>
       </div>
       <div className="single_advisor_details_info">
@@ -31,7 +62,7 @@ const Team = () => {
   const [teamData, setTeamData] = useState([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8010/sharks/')
+    fetch('/sharks/')
       .then(response => response.json())
       .then(data => setTeamData(data));
   }, []);

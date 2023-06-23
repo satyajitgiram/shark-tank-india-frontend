@@ -20,7 +20,7 @@ const Contact = () => {
 
     // Perform API call here to send form data
     // Replace 'API_ENDPOINT' with your actual API endpoint
-    fetch('http://127.0.0.1:8010/contact-us/', {
+    fetch('/contact-us/', {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {

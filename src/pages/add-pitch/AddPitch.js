@@ -142,7 +142,7 @@ const FormComponent = () => {
 
     // Perform API call here to send form data
     // Replace 'API_ENDPOINT' with your actual API endpoint
-    fetch('http://127.0.0.1:8010/pitches/', {
+    fetch('/pitches/', {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {
@@ -158,7 +158,7 @@ const FormComponent = () => {
       .catch((error) => {
         // Handle any errors that occurred during the API call
         console.error(error);
-        alert("Pitch not submitted, Try again after sometime")
+        alert("Pitch submission failed!, Try again after sometime")
       });
   };
 

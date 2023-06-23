@@ -12,7 +12,7 @@ export const fetchDataFailure = (error) => ({
 
 export const fetchData = () => {
   return (dispatch) => {
-    fetch('http://127.0.0.1:8010/pitches/')
+    fetch('http:///pitches/')
       .then((response) => response.json())
       .then((data) => dispatch(fetchDataSuccess(data)))
       .catch((error) => dispatch(fetchDataFailure(error)));

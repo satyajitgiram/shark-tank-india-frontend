@@ -12,7 +12,7 @@ const PitchTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8010/pitches/');
+        const response = await axios.get('/pitches/');
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -29,7 +29,7 @@ const PitchTable = () => {
     Header: 'Brand',
     accessor: 'brand_name',
     Cell: ({ value, row }) => (
-      <a href={`/pitches/${encodeURIComponent(value)}?id=${encodeURIComponent(row.original.id)}`}>
+      <a href={`/pitches/${encodeURIComponent(row.original.id)}`}>
         {value}
       </a>
     ),
