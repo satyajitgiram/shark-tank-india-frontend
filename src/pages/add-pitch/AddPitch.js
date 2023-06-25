@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import {
-  TextField,
-  Checkbox,
-  FormControlLabel,
-  Button,
-  Stack,
-} from "@mui/material";
+import { TextField, Checkbox, FormControlLabel, Button, Stack} from "@mui/material";
 import Select from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
+import Swal from 'sweetalert2';
+
+
 const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
 
 const ITEM_HEIGHT = 48;
@@ -151,11 +148,19 @@ const FormComponent = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        alert("Pitch Saved succefully !")
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Pitch saved succefullyil',
+        });
       })
       .catch((error) => {
         console.error(error);
-        alert("Pitch submission failed!, Try again after sometime")
+        Swal.fire({
+          icon: 'error',
+          title: 'Error!',
+          text: 'Pitch submission failed!, Try again after sometime'
+        });
       });
   };
 

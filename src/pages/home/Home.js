@@ -12,7 +12,7 @@ const Home = () => {
         <img src={logoImg} alt="LOGO" />
       </div>
       <div className="showcase-content">
-        <h1>See what's next</h1>
+        <h1>Businesses in the Making!</h1>
         <p>Watch anywhere. Anytime On SONY LIV</p>
         <a href="https://www.sonyliv.com/shows/shark-tank-india-1700000741" target="_blank" rel="noreferrer" className="btn btn-xl">Watch Now on SONY LIV</a>
       </div>

@@ -7,19 +7,21 @@ a{
   text-decoration:none
 }
 .header{
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: flex-start;
-  height:50vw;
-  min-height:400px;
-  max-height:550px;
-  min-width:300px;
-  background: #c5cbdd url(https://origin-staticv2.sonyliv.com/videoasset_images/sti_s2_set6_5may_landscape_thumb.jpg) 61% 0 no-repeat !important;
-  color:#eee;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    height: 50vw;
+    min-height: 400px;
+    max-height: 550px;
+    min-width: 300px;
+    background: url(https://assets-global.website-files.com/619cb1d…/63ca6f7…_Shark%20tank%20new%20blog.png) 50% 0 no-repeat !important;
+    color: #eee;
+    /* text-shadow: #ff0505 41px 32px; */
+    background-size: 100% 115% !important;
 }
 .header:after{
   content:"";

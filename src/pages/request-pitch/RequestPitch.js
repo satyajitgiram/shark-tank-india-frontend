@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
-import { TextField, Button, Container, Stack } from '@mui/material';
-import { Link } from "react-router-dom"
+import { TextField, Button, Stack } from '@mui/material';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import Swal from 'sweetalert2';
+
 
 const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
+
 const RequestPitch = () => {
     const [title, setTitle] = useState('')
     const [industry, setIndustry] = useState('')
@@ -58,15 +60,20 @@ const RequestPitch = () => {
         })
           .then(response => response.json())
           .then(result => {
-            // Handle the response from the API
-            alert("Pitch Requested succefully!, we will give you update on your mail")
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: 'Requested for Pitch sent succefully!, we will give you update on your mail',
+              });
             console.log(result);
           })
           .catch(error => {
-            // Handle any errors
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: 'Pitch submission failed!, Try again after sometime'
+              });
             console.error('Error:', error);
-            alert("Pitch submission failed!, Try again after sometime")
-
           });
       }
  

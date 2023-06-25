@@ -1,5 +1,7 @@
 import  { useState } from 'react';
+import Swal from 'sweetalert2';
 import './contact.scss';
+
 
 const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
 
@@ -30,11 +32,20 @@ const Contact = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        alert("Messege sent succefully, we will reach you soon")
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Messege sent succefully, we will reach you soon',
+        });
       })
       .catch((error) => {
         console.error(error);
-        alert("We could not sent message right now, Try again after sometime")
+        Swal.fire({
+          icon: 'error',
+          title: 'Error!',
+          text: 'We could not sent message right now, Try again after sometime',
+        });
+        alert("")
       });
   };
 

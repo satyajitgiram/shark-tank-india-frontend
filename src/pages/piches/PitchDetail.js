@@ -39,7 +39,6 @@ const PitchDetail = () =>{
             <tr>
               <th>#</th>
               <th>Information</th>
-              {/* Add more table headings as per your data */}
             </tr>
           </thead>
           <tbody>
@@ -50,10 +49,13 @@ const PitchDetail = () =>{
                 {typeof value === "object" ? (
                     <ul>
                     {Object.entries(value).map(([nestedKey, nestedValue]) => (
-                        <li key={nestedKey}>
-                        <strong>{nestedKey}: </strong>
-                        {nestedValue}
-                        </li>
+                        
+                        nestedValue !== 0 && (
+                            <li key={nestedKey}>
+                              <strong>{nestedKey}- </strong>
+                              {nestedValue !== 1 && nestedValue}
+                            </li>
+                          )
                     ))}
                     </ul>
                 ) : (

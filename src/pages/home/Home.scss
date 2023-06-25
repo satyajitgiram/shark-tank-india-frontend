@@ -71,7 +71,7 @@
 .showcase-content h1 {
     font-weight: 700;
     color: white;
-    font-size: 5.2rem;
+    font-size: 4.5rem;
     line-height: 1.1;
     margin: 0 0 2rem;
 }
@@ -119,8 +119,16 @@
 .btn-icon {
     margin-left: 1rem;
 }
+@media (max-width: 2000px) {
+    .showcase::after {
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
 
 @media (max-width: 960px) {
+    .showcase::after {
+        background: rgba(0, 0, 0, 0.6);
+    }
     .showcase {
         height: 70vh;
     }

@@ -2,11 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import './shark-detail.scss'
 import { Grid } from '@mui/material';
+import deals from './shark_investment.json';
+import SharkCompaniesTable from './shark_companies';
+
+
 
 const BASE_URL = 'https://satyajitzecdata.pythonanywhere.com';
 
 const SharkDetail = () => {
-  const { id } = useParams();
+    const { id } = useParams();
+    const sharksDeal = deals.find(item => item.id == id);
   
   const [member, setMember] = useState(null);
 
@@ -43,6 +48,14 @@ const SharkDetail = () => {
         <hr />
         <p>{member.career}</p>
         <br/>
+        <h1>Shark Tank Statistics</h1>
+        <ul>
+            <li><b>Investment:</b> {sharksDeal.investment}</li>
+            <li><b>Number of Deals:</b> {sharksDeal.deals}</li>
+            <li><b>Invested Companies:</b>
+            <SharkCompaniesTable sharksDeal={sharksDeal.companies_invested} />
+            </li> 
+        </ul>
       </Grid>
     </Grid>
 

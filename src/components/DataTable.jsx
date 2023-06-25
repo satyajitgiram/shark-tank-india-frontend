@@ -21,7 +21,7 @@ const DataTable = ({ columns, data }) => {
     {
       columns,
       data,
-      initialState: { pageIndex: 0, pageSize: 10 },
+      initialState: { pageIndex: 0, pageSize: 25 },
     },
     useFilters,
     useGlobalFilter,
